@@ -1,16 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product-Deatail</title>
+    <title>Home</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script async src="./assets/bootstrap.bundle.js"></script>
+    <script async src="./assets/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/bootstrap.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/slick.css">
+    <link rel="stylesheet" href="assets/slick-theme.css">
     <link rel="stylesheet" href="./scss/style.css">
-    <script async src="./js/main.js"></script>
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 </head>
+
 <body>
+    <div class="overlay-body"></div>
+    <div class="loading">
+        <img class="spedometer" src="img/static/preloader.gif" alt="">
+    </div>
+    <span class="up"><i class="fa-solid fa-arrow-up"></i></span>
+    <header id="header">
+        <div class="upper-navbar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="logo col-5 col-sm-4 col-lg-3 py-3">
+                        <a href="home.html"><img src="/img/static/logo.png" alt="logo" class="img-fluid"></a>
+                    </div>
+                    <div class="search-bar d-none d-lg-block col-lg-7">
+                        <input class="" type="text" placeholder="Axtarış">
+                        <a class="search-link text-white text-decoration-none" href=""><i
+                                class="fa-solid fa-magnifying-glass"></i></a>
+                    </div>
+                    <div class="cart d-flex align-items-center col-5 col-sm-6 col-lg-2 justify-content-end">
+                        <div class="cart-logo d-flex align-items-center">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </div>
+                        <div class="cart-text">
+                            <p class="m-0">Satış Səbəti</p>
+                            <h4 class="m-0">$0.00</h4>
+                            <div class="cart-box">
+                                <!-- No products in the cart. -->
+                                <div class="product pb-3">
+                                    <div class="product-img p-0">
+                                        <a href="product-detail.html"><img src="./img/static/e-p-6-1.jpg" alt=""
+                                                class="img-fluid"></a>
+                                    </div>
+                                    <div class="product-text row align-items-center ps-2 text-start">
+                                        <div class="product-title"><a href="product-detail.html">Powerstroke Engines
+                                                Turbo Air
+                                                Products</a></div>
+                                        <div class="product-price">
+                                            <span class="count">1</span>
+                                            <span>x</span>
+                                            <span class="price">$563.00</span>
+                                        </div>
+                                    </div>
+                                    <p class="product-remove">x</p>
+                                </div>
+                                <div class="subtotal d-flex justify-content-between">
+                                    <p>Cəmi:</p>
+                                    <p>$563.00</p>
+                                </div>
+                                <div class="cart-links d-flex justify-content-between">
+                                    <a href="cart.html">Səbəti Göstər</a>
+                                    <a href="order.html">Ödəniş</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger-bar col-2 justify-content-end d-flex d-lg-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-menu">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="logo p-3">
+                <a class="d-flex justify-content-center" href="home.html"><img src="/img/static/logo.png" alt="logo"
+                        class="col-7 col-lg-12 img-fluid"></a>
+            </div>
+            <ul class="menu list-unstyled m-0 p-0">
+                <li><a class="menu-link active" href="home.html">Ana Səhifə</a></li>
+                <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+                <li><a class="menu-link" href="shop.html">Məhsullar</a></li>
+                <li><a class="menu-link" href="services.html">Xidmətlərimiz</a></li>
+                <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+                <li><a class="menu-link" href="blog.html">Bloq</a></li>
+                <li><a class="menu-link" href="fag.html">Tez-tez verilən suallar</a></li>
+            </ul>
+        </div>
+        <div class="lower-navbar d-none d-lg-block">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="category-menu align-items-center pe-5 d-none d-xl-flex">
+                        <span class="text-white text-decoration-none"><i
+                                class="fa-solid fa-bars pe-md-3"></i>Kateqoriyalar</span>
+                        <div class="menu-box">
+                            <ul class="list-unstyled m-0 p-0">
+                                <li><a href="shop.html">Qulluq Məhsulları</a></li>
+                                <li><a href="shop.html">Disk və Təkər Aksesuarları</a></li>
+                                <li><a href="shop.html">Daxili Aksesuarlar</a></li>
+                                <li><a href="shop.html">Xarici Aksesuarlar</a></li>
+                                <li><a href="shop.html">Səs və Görüntü Sistemləri</a></li>
+                                <li><a href="shop.html">Təhlükəsizlik Sistemləri</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="menu d-flex list-unstyled m-0 p-0">
+                        <li><a class="menu-link " href="home.html">Ana Səhifə</a></li>
+                        <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+                        <li><a class="menu-link active" href="shop.html">Məhsullar</a></li>
+                        <li><a class="menu-link" href="services.html">Xidmətlərimiz</a></li>
+                        <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+                        <li><a class="menu-link" href="blog.html">Bloq</a></li>
+                        <li><a class="menu-link" href="fag.html">Tez-tez verilən suallar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="product-1">
+        <div class="container">
+            <div class="row row-cols-lg-2">
+                <div class="box1">
+                    <img src="./img/product-details/product-1-1.jpg" alt="" class="product-1">
+                    <img src="./img/product-details/1f50d.svg" alt="" class="product-1-icon">
+                </div>
+                <div class="box2">
+                    <h1>6 Speed Gearbox</h1>
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <p class="ms-4">(3 customer reviews)</p>
+                    </div>
+                    <div class="product-1-text">
+                        <h2>$644.00</h2>
+                        <span>There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don’t look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn’t anything embarrassing hidden in the middle <br> of text.</span>
+                    </div>
+                    <div class="d-flex addtocard">
+                        <input placeholder="1" type="number" class="me-4">
+                        <button type="submit"> add to Cart</button>
+                    </div>
+                    <div class="product-like d-flex align-items-center">
+                        <i class="fa-solid fa-heart like me-4"></i>
+                        <span>Browse wishlist</span>
+                    </div>
+                    <div class="product-Category">
+                        <span class="span1">Category:</span>
+                        <span class="span2
+                     ">Engine&Drivetrain</span>
+                        <br>
+                        <span class="span1">Tags:</span>
+                        <span class="span2
+                     ">Accessories</span>
+                        <span class="span2
+                     ">Wheels</span>
+                        <br><br>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-product-hunt"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-2">
+        <div class="container">
+            <div class="boxes">
+                <div class="produc-title pb-5">
+                    <ul class="d-flex ">
+                        <li class="description li-active ">
+                            Description
+                        </li>
+                        <li class="information">
+                            Additional information
+                        </li>
+                        <li class="reviews">
+
+                            Reviews (3)
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="descrip">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum, diam non iaculis
+                        finibus, ipsum arcu sollicitudin dolor, ut cursus sapien sem sed purus. Donec vitae fringilla
+                        tortor, sed fermentum nunc. Suspendisse sodales turpis dolor, at rutrum dolor tristique id.
+                        Quisque pellentesque ullamcorper felis, eget gravida mi elementum a. Maecenas consectetur
+                        volutpat ante, sit amet molestie urna luctus in. Nulla eget dolor semper urna malesuada dictum.
+                        Duis eleifend pellentesque dui et finibus. Pellentesque dapibus dignissim augue. Etiam odio est,
+                        sodales ac aliquam id, iaculis eget lacus. Aenean porta, ante vitae suscipit pulvinar, purus dui
+                        interdum tellus, sed dapibus mi mauris vitae tellus.</p>
+                    <h3>Etiam lacus lacus mollis in mattis</h3>
+                    <p>
+                        Praesent mattis eget augue ac elementum. Maecenas vel ante ut enim mollis accumsan. Vestibulum
+                        vel eros at mi suscipit feugiat. Sed tortor purus, vulputate et eros a, rhoncus laoreet orci.
+                        Proin sapien neque, commodo at porta in, vehicula eu elit. Vestibulum ante ipsum primis in
+                        faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur porta vulputate augue, at
+                        sollicitudin nisl molestie eget.
+
+                        Nunc sollicitudin, nunc id accumsan semper, libero nunc aliquet nulla, nec pretium ipsum risus
+                        ac neque. Morbi eu facilisis purus. Quisque mi tortor, cursus in nulla ut, laoreet commodo quam.
+                        Pellentesque et ornare sapien. In ac est tempus urna tincidunt finibus. Integer erat ipsum,
+                        tristique ac lobortis sit amet, dapibus sit amet purus. Nam sed lorem nisi. Vestibulum ultrices
+                        tincidunt turpis, sit amet fringilla odio scelerisque non.
+                    </p>
+                </div>
+                <div class="information-content">
+                    <table>
+                        <tr>
+                        <th class="py-3">
+                            Car Type
+                        </th>
+                          <td class="py-3">	
+                            4 Wheel Drive, Hatchback, Wagon
+                        </td>
+                        </tr>
+
+                        <tr>
+                            <th class="py-3">
+                               Car Brand
+                            </th>
+                              <td class="py-3">	
+                               	
+Chevrolet
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="py-3">
+                                Parts Type
+                            </th>
+                              <td class="py-3">	
+                               	
+	
+                                Accessories, Brakes
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="py-3">
+                                Color
+                            </th>
+                        <td class="py-3">	                         	
+Red
+                            </td>
+                        </tr>
+                      </table>
+                </div>
+                <div class="review">
+                  <div class="user1 d-flex py-3">
+                    <div class="img-box">
+                      <img src="./img/blog-details/david.jpeg" alt="" srcset="" class="">
+                    </div>
+                    <div class="text px-5">
+                      <h5>David Parker</h5>
+                      <span class="d-block">This is a useful post for finding broken links within the website, what about links pointing outwards that are broken? I can use a free web service but wondered if this was possible.</span>
+                      <a href="#">Log in to Reply</a>
+                    </div>
+                    </div>
+                    <div class="user1 d-flex ps-5 py-5">
+                    <div class="img-box ">
+                      <img src="./img/blog-details/harry.jpeg" alt="" srcset="" class="">
+                    </div>
+                    <div class="text px-5">
+                      <h5>David Parker</h5>
+                      <span class="d-block">This is a useful post for finding broken links within the website, what about links pointing outwards that are broken? I can use a free web service but wondered if this was possible.</span>
+                      <a href="#">Log in to Reply</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-3">
+        <div class="container">
+            <div class="box6-text d-flex align-items-center justify-content-center d-none d-md-block">
+           
+                <h3><a href="#">Related products</a></h3>
+            </div>  
+            <div class="product-3-boxes row row-cols-lg-5 row-cols-md-3 productleft me-2 mt-5">
+              <div class="product-item col-12 p-0 ms-xl-4 mb-4">
+                <div class="product-img">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                   <a href="#">
+
+                       <img src="./img/product-details/product-1.jpg" alt="" class="img-fluid">
+                   </a> 
+                </div>
+                <div class="product-data">
+                    <div class="product-title"><a href="#">6 Speed Gearbox</a></div>
+                    <div class="product-price d-flex justify-content-between">
+                        $644.00
+                        <div class="stars d-flex">
+                            <i class="star active fa-solid fa-star"></i>
+                            <i class="star active fa-solid fa-star"></i>
+                            <i class="star active fa-solid fa-star"></i>
+                            <i class="star active fa-solid fa-star"></i>
+                            <i class="star active fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center pt-4">
+                       
+
+                            <span class="cart-link">Səbətə əlavə
+                                et</span>
+                       
+                        </div>
+                </div>
+            </div>
     
+            <div class="product-item col-12 p-0 ms-xl-4 mb-4">
+              <div class="product-img">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                 <a href="#">
+
+                     <img src="./img/product-details/product-3.jpg" alt="" class="img-fluid">
+                 </a> 
+              </div>
+              <div class="product-data">
+                  <div class="product-title"><a href="#">6 Speed Gearbox</a></div>
+                  <div class="product-price d-flex justify-content-between">
+                      $644.00
+                      <div class="stars d-flex">
+                          <i class="star active fa-solid fa-star"></i>
+                          <i class="star active fa-solid fa-star"></i>
+                          <i class="star active fa-solid fa-star"></i>
+                          <i class="star active fa-solid fa-star"></i>
+                          <i class="star active fa-solid fa-star"></i>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-center pt-4">
+                     
+
+                          <span class="cart-link">Səbətə əlavə
+                              et</span>
+                     
+                      </div>
+              </div>
+          </div>
+    
+          <div class="product-item col-12 p-0 ms-xl-4 mb-4">
+            <div class="product-img">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+               <a href="#">
+
+                   <img src="./img/product-details/product-4.jpg" alt="" class="img-fluid">
+               </a> 
+            </div>
+            <div class="product-data">
+                <div class="product-title"><a href="#">6 Speed Gearbox</a></div>
+                <div class="product-price d-flex justify-content-between">
+                    $644.00
+                    <div class="stars d-flex">
+                        <i class="star active fa-solid fa-star"></i>
+                        <i class="star active fa-solid fa-star"></i>
+                        <i class="star active fa-solid fa-star"></i>
+                        <i class="star active fa-solid fa-star"></i>
+                        <i class="star active fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center pt-4">
+                   
+
+                        <span class="cart-link">Səbətə əlavə
+                            et</span>
+                   
+                    </div>
+            </div>
+        </div>
+        <div class="product-item col-12 p-0 ms-xl-4 mb-4">
+          <div class="product-img">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+             <a href="#">
+
+                 <img src="./img/product-details/product-5.jpg" alt="" class="img-fluid">
+             </a> 
+          </div>
+          <div class="product-data">
+              <div class="product-title"><a href="#">6 Speed Gearbox</a></div>
+              <div class="product-price d-flex justify-content-between">
+                  $644.00
+                  <div class="stars d-flex">
+                      <i class="star active fa-solid fa-star"></i>
+                      <i class="star active fa-solid fa-star"></i>
+                      <i class="star active fa-solid fa-star"></i>
+                      <i class="star active fa-solid fa-star"></i>
+                      <i class="star active fa-solid fa-star"></i>
+                  </div>
+              </div>
+              <div class="d-flex justify-content-center pt-4">
+                 
+
+                      <span class="cart-link">Səbətə əlavə
+                          et</span>
+                 
+                  </div>
+          </div>
+      </div>
+               
+            </div>
+        </div>
+    </section> 
+
+    <footer id="footer">
+        <div class="upper-footer">
+          <div class="container">
+            <div class="row">
+              <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="logo pb-2 pe-5">
+                  <a href="home.html"
+                    ><img
+                      src="img/static/logo-alt.png"
+                      alt=""
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <p class="py-3">
+                  Bu uzun bir həqiqətdir ki, oxucu səhifəyə daxil olduqda məzmun
+                  verir. Lorem Ipsum-dan istifadənin məqsədi onun olmasıdır
+                </p>
+                <div class="socials row">
+                  <a href="facebook.com"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a href="twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="pinterest.com"
+                    ><i class="fa-brands fa-pinterest-p"></i
+                  ></a>
+                  <a href="linkedin.com"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+                <h5 class="title">Müştəri Xidmətləri</h5>
+                <ul class="list-unstyled">
+                  <li><a href="contact.html">Əlaqə</a></li>
+                  <li><a href="about.html">Haqqımızda</a></li>
+                  <li><a href="services.html">Xidmətlərimiz</a></li>
+                  <li><a href="fag.html">Tez-tez verilən suallar</a></li>
+                </ul>
+              </div>
+              <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+                <h5 class="title">Ən Son Paylaşımlar</h5>
+                <div class="post pb-3">
+                  <div class="post-img p-0">
+                    <a href="blog-detail.html"
+                      ><img
+                        src="img/static/automotive-car-coupe-dashboard-498694-80x80.jpg"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                  </div>
+                  <div class="post-text ps-3 row align-items-center text-start">
+                    <div class="post-title">
+                      <a href="blog-detail.html"
+                        >Elektrikli maşınlar düşündüyünüz qədər sağlam deyil</a
+                      >
+                    </div>
+                    <div class="post-date py-1">Aprel 20, 2023</div>
+                  </div>
+                </div>
+                <div class="post">
+                  <div class="post-img p-0">
+                    <a href="blog-detail.html"
+                      ><img
+                        src="img/static/parked-white-coupe-during-night-3354648-80x80.jpg"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                  </div>
+                  <div
+                    class="post-text ps-3 row align-items-center align-content-start text-start"
+                  >
+                    <div class="post-title">
+                      <a href="blog-detail.html"
+                        >Avtomobillerin nece işə düşdüyünü bilirsənmi?</a
+                      >
+                    </div>
+                    <div class="post-date py-1">Aprel 19, 2023</div>
+                  </div>
+                </div>
+              </div>
+              <div class="column last pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+                <h5 class="title">Xəbərlər</h5>
+                <p>
+                  Xəbərlərimizə abunə olun və növbəti ödəniş üçün bonus əldə edin
+                </p>
+                <input
+                  type="text"
+                  placeholder="Elektron poçtunuz"
+                  class="rounded-5 w-100 mt-3"
+                />
+                <a href="" class="rounded-5 w-100 text-center mt-3">Abunə ol</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower-footer">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="copyright text-white opacity-75">
+                <p class="m-0">
+                  Copyright © 2023 Sayara. Bütün hüquqlar Wild Team tərəfindən
+                  qorunur.
+                </p>
+              </div>
+              <ul
+                class="cards list-unstyled row p-0 m-0 align-items-center justify-content-center justify-content-md-end"
+              >
+                <li class="col-4 col-sm-3 col-md-2">
+                  <a href="#"
+                    ><img
+                      src="img/static/mastercard.png"
+                      alt="mastercard"
+                      class="img-fluid"
+                  /></a>
+                </li>
+                <li class="col-4 col-sm-3 col-md-2">
+                  <a href="#"
+                    ><img
+                      src="img/static/visa.png"
+                      alt="visa"
+                      class="img-fluid"
+                  /></a>
+                </li>
+                <li class="col-4 col-sm-3 col-md-2">
+                  <a href="#"
+                    ><img src="./img/static/jcb.png" alt="jcb" class="img-fluid"
+                  /></a>
+                </li>
+                <li class="col-4 col-sm-3 col-md-2">
+                  <a href="#"
+                    ><img
+                      src="img/static/discover.png"
+                      alt="discover"
+                      class="img-fluid"
+                  /></a>
+                </li>
+                <li class="col-4 col-sm-3 col-md-2">
+                  <a href="#"
+                    ><img
+                      src="img/static/paypal.png"
+                      alt="paypal"
+                      class="img-fluid"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <script src="/assets/jquery-3.6.4.min.js"></script>
+    <script src="assets/slick.min.js"></script>
+
+    <script src="./js/product-details.js"></script>
 </body>
+
 </html>

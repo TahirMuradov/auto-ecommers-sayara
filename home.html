@@ -6,11 +6,607 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script async src="./assets/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/bootstrap.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="assets/slick.css">
+    <link rel="stylesheet" href="assets/slick-theme.css">
     <link rel="stylesheet" href="./scss/style.css">
-    <script async src="./js/main.js"></script>
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 </head>
 <body>
-    
+  <div class="overlay-body"></div>
+  <div class="loading">
+      <img class="spedometer" src="img/static/preloader.gif" alt="">
+  </div>
+  <span class="up"><i class="fa-solid fa-arrow-up"></i></span>
+  <header id="header">
+      <div class="upper-navbar">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="logo col-5 col-sm-4 col-lg-3 py-3">
+                      <a href="home.html"><img src="/img/static/logo.png" alt="logo" class="img-fluid"></a>
+                  </div>
+                  <div class="search-bar d-none d-lg-block col-lg-7">
+                      <input class="" type="text" placeholder="Axtarış">
+                      <a class="search-link text-white text-decoration-none" href=""><i
+                              class="fa-solid fa-magnifying-glass"></i></a>
+                  </div>
+                  <div class="cart d-flex align-items-center col-5 col-sm-6 col-lg-2 justify-content-end">
+                      <div class="cart-logo d-flex align-items-center">
+                          <i class="fa-solid fa-cart-plus"></i>
+                      </div>
+                      <div class="cart-text">
+                          <p class="m-0">Satış Səbəti</p>
+                          <h4 class="m-0">$0.00</h4>
+                          <div class="cart-box">
+                              <!-- No products in the cart. -->
+                              <div class="product pb-3">
+                                  <div class="product-img p-0">
+                                      <a href="product-detail.html"><img src="./img/static/e-p-6-1.jpg" alt=""
+                                              class="img-fluid"></a>
+                                  </div>
+                                  <div class="product-text row align-items-center ps-2 text-start">
+                                      <div class="product-title"><a href="product-detail.html">Powerstroke Engines
+                                              Turbo Air
+                                              Products</a></div>
+                                      <div class="product-price">
+                                          <span class="count">1</span>
+                                          <span>x</span>
+                                          <span class="price">$563.00</span>
+                                      </div>
+                                  </div>
+                                  <p class="product-remove">x</p>
+                              </div>
+                              <div class="subtotal d-flex justify-content-between">
+                                  <p>Cəmi:</p>
+                                  <p>$563.00</p>
+                              </div>
+                              <div class="cart-links d-flex justify-content-between">
+                                  <a href="cart.html">Səbəti Göstər</a>
+                                  <a href="order.html">Ödəniş</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="burger-bar col-2 justify-content-end d-flex d-lg-none">
+                      <i class="fa-solid fa-bars"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="side-menu">
+          <i class="fa-solid fa-xmark"></i>
+          <div class="logo p-3">
+              <a class="d-flex justify-content-center" href="home.html"><img src="/img/static/logo.png" alt="logo"
+                      class="col-7 col-lg-12 img-fluid"></a>
+          </div>
+          <ul class="menu list-unstyled m-0 p-0">
+              <li><a class="menu-link active" href="home.html">Ana Səhifə</a></li>
+              <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+              <li><a class="menu-link" href="shop.html">Məhsullar</a></li>
+              <li><a class="menu-link" href="services.html">Xidmətlərimiz</a></li>
+              <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+              <li><a class="menu-link" href="blog.html">Bloq</a></li>
+              <li><a class="menu-link" href="fag.html">Tez-tez verilən suallar</a></li>
+          </ul>
+      </div>
+      <div class="lower-navbar d-none d-lg-block">
+          <div class="container">
+              <div class="d-flex">
+                  <div class="category-menu align-items-center pe-5 d-none d-xl-flex">
+                      <span class="text-white text-decoration-none"><i
+                              class="fa-solid fa-bars pe-md-3"></i>Kateqoriyalar</span>
+                      <div class="menu-box">
+                          <ul class="list-unstyled m-0 p-0">
+                              <li><a href="shop.html">Qulluq Məhsulları</a></li>
+                              <li><a href="shop.html">Disk və Təkər Aksesuarları</a></li>
+                              <li><a href="shop.html">Daxili Aksesuarlar</a></li>
+                              <li><a href="shop.html">Xarici Aksesuarlar</a></li>
+                              <li><a href="shop.html">Səs və Görüntü Sistemləri</a></li>
+                              <li><a href="shop.html">Təhlükəsizlik Sistemləri</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <ul class="menu d-flex list-unstyled m-0 p-0">
+                      <li><a class="menu-link active" href="home.html">Ana Səhifə</a></li>
+                      <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+                      <li><a class="menu-link" href="shop.html">Məhsullar</a></li>
+                      <li><a class="menu-link" href="services.html">Xidmətlərimiz</a></li>
+                      <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+                      <li><a class="menu-link" href="blog.html">Bloq</a></li>
+                      <li><a class="menu-link" href="fag.html">Tez-tez verilən suallar</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </header>
+    <section id="home-sec1">
+        <div class="container">
+            <div class="home-boxes">
+        <h1>Aracınız İçin Parça Bulun</h1>
+        <p>Yüzlerce marka ve on binlerce parça</p>
+                
+        <form action="" class="row row-cols-md-2 row-cols-lg-4">
+            <div class="home-box pe-lg-1">
+                <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                    <option selected>Marka</option>
+                    <option value="1">Chevrolet</option>
+                    <option value="2">Lexsus</option>
+                    <option value="3">Wolkswagen</option>
+                  </select>
+            </div>
+            <div class="home-box pe-lg-1">
+                <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                    <option selected>Tip</option>
+                    <option value="1">4 Cekis</option>
+                    <option value="2">coupe</option>
+                    <option value="3">Hibrit</option>
+                    <option value="4">Sedan</option>
+                    <option value="5">Suv</option>
+                  </select>
+            </div>
+            <div class="home-box box1 ">
+                <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                    <option selected>Reng</option>
+                    <option value="1">Siyah</option>
+                    <option value="2">Beyaz</option>
+                    <option value="3">Kirmizi</option>
+                    <option value="4">Gumus</option>
+                    
+                  </select>
+            </div>
+            <div class="home-box">
+            <button type="submit">Aramak</button>
+        </div>
+        </form>
+    </div>
+        
+    </div>
+</section>
+
+
+<section id="home-sec2">
+    <div class="container">
+        <div class="row row-cols-md-2 row-cols-lg-3">
+            <div class="box mb-4 pe-md-4" data-aos="fade-right" data--aos-dely="1000" data-aos-duration="2000">
+                <img src="./img/home/home-sec2-1.jpg" alt="" class="img-fluid">
+
+                <div class="sec2-overlay container">
+                    
+                        <p>Düşük Fiyat garantisi</p>
+                        <h1>İç Parçalar</h1>
+                        <button><a href="#">Simdi satin al</a> </button>
+                    
+                </div>
+            </div>
+            <div class="box mb-4 pe-md-4" data-aos="fade-right" data--aos-dely="1000" data-aos-duration="2000">
+                <img src="./img/home/home-sec2-2.jpg" alt="" class="img-fluid">
+
+                <div class="sec2-overlay container">
+                    
+                        <p>Bir sonraki seviyedeki elektrikli aletler</p>
+                        <h1>Jant Jant</h1>
+                        <button><a href="#">Simdi satin al</a> </button>
+                    
+                </div>
+            </div>
+            <div class="box mb-4 pe-md-4"data-aos="fade-left" data--aos-dely="1000" data-aos-duration="2000">
+                <img src="./img/home/home-sec2-3.jpg" alt="" class="img-fluid">
+
+                <div class="sec2-overlay container">
+                    
+                        <p>Her Araç İçin</p>
+                        <h1>Vücut kısımları</h1>
+                        <button><a href="#">Simdi satin al</a> </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="home-sec3">
+    <div class="container">
+        <div class="row row-cols-md-2 row-cols-lg-4">
+            <div class="box mb-4 d-flex align-items-center" data-aos="fade-right" data--aos-dely="1000" data-aos-duration="2000">
+                <div class="sec3-icon">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+
+                </div>
+                <div class="sec3-text">
+                    <h4>Ücretsiz kargo</h4>
+                    <p>50$'dan başlayan siparişler için</p>
+
+                </div>
+            </div>
+            <div class="box mb-4 d-flex align-items-center" data-aos="fade-right" data--aos-dely="1000" data-aos-duration="2000">
+                <div class="sec3-icon">
+                    <i class="fa-solid fa-truck-arrow-right"></i>
+
+                </div>
+                <div class="sec3-text">
+                    <h4>7/24 destek</h4>
+                    <p>istediğiniz zaman bizi arayın</p>
+
+                </div>
+            </div>
+            <div class="box mb-4 d-flex align-items-center" data-aos="fade-left" data--aos-dely="1000" data-aos-duration="2000">
+                <div class="sec3-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                </div>
+                <div class="sec3-text">
+                    <h4>%100 Güvenlik</h4>
+                    <p>Yalnızca güvenli ödemeler</p>
+
+                </div>
+            </div>
+            <div class="box mb-4 d-flex align-items-center" data-aos="fade-left" data--aos-dely="1000" data-aos-duration="2000">
+                <div class="sec3-icon">
+                    <i class="fa-solid fa-percent"></i>
+
+                </div>
+                <div class="sec3-text">
+                    <h4>Sıcak Teklifler</h4>
+                    <p>%90'a varan indirimler</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="home-sec4">
+    <div class="container">
+        <div class="home-sec4-text d-flex justify-content-between align-items-center mb-4">
+            <h2>Kategoriye göre alışveriş</h2>
+            <button><a href="#">Simdi satin al</a></button>
+        </div>
+       <div class="row row-cols-md-2 row-cols-lg-4" data-aos="fade-up"
+       data-aos-duration="3000">
+
+       </div>
+    </div>
+</section>
+
+<section id="home-sec5">
+    <div class="container">
+        <div class="row">
+        <div class="box1 col-lg-3 ">
+                <img src="./img/home/home-sec4-1.jpg" alt="">
+
+                <div class="sec5-overlay container rounded-5">
+                    <div class="sec5-text">
+                    <h1>Jant Jant</h1>
+                    <p class="mb-4">Düşük fiyatlar. Fiyat eşleştirme garantisi</p>
+                    <ul>
+                    <li>Farlar ve Aydınlatma</li>
+                    <li>Frenler ve Süspansiyon</li>
+                    <li>Vücut kısımları</li>
+                    <li>İç Parçalar</li>
+                    <li>Motor ve Aktarma Organları</li>
+                        <li>Araçlar ve Garaj</li>
+                    </ul>
+
+
+                        <button><a href="#">Simdi satin al</a> </button></div>
+            </div>
+        </div>
+        <div class="box2 col-lg-9">
+            <div class="box2-text d-flex align-items-center justify-content-center d-none d-md-block">
+                <button class="me-5"><a href="#">Motor ve Aktarma Organlari</a></button>
+                <span><a href="#">Araçlar ve Garaj</a></span>
+            </div>
+
+            <div class="home5-boxes d-flex  me-2 mt-5">
+                <div class="card col-12  col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">OE Yedek Motor</h5>
+                      <p class="card-text">563.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+
+                <div class="card col-12 col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Poverstroke Motorlari</h5>
+                      <p class="card-text">563.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+
+                <div class="card col-12 col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Degistir-OE Degistirme</h5>
+                      <p class="card-text">2.356.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-4.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Hava Filtiresi</h5>
+                      <p class="card-text">65.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Ikiz Egzoz Borusu</h5>
+                      <p class="card-text">156.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-lg-4 mx-3 p-3">
+                    <img src="./img/home/home-sec5-6.jpg" class="card-img-top img-kutu " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Motor Bakim Kiti</h5>
+                      <p class="card-text">3.641.00$</p>
+                      <a href="#" class="btn">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="home-sec6">
+    <div class="container">
+        <div class="box6-text d-flex align-items-center justify-content-center d-none d-md-block">
+        
+            <h3><a href="#">Özel Ürünler</a></h3>
+        </div>  
+        <div class="home6-boxes d-flex  me-2 mt-5">
+            <div class="card col-12  col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">OE Yedek Motor</h5>
+                  <p class="card-text">563.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Poverstroke Motorlari</h5>
+                  <p class="card-text">563.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Degistir-OE Degistirme</h5>
+                  <p class="card-text">2.356.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-12 col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-4.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Hava Filtiresi</h5>
+                  <p class="card-text">65.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-12 col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Ikiz Egzoz Borusu</h5>
+                  <p class="card-text">156.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-12 col-lg-4 mx-3 p-3">
+                <img src="./img/home/home-sec5-6.jpg" class="card-img-top img-kutu " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Motor Bakim Kiti</h5>
+                  <p class="card-text">3.641.00$</p>
+                  <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<section id="take1">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-7">
+                <div class="box-left">
+                    <h1>Take care of your tire 22% off</h1>
+                    <h5>This discount is not valid in conjunction with other offers</h5>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="box-right">
+                    <img class="wheel img-fluid" src="./img/home/tire (1).png" alt="">
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="upper-footer">
+      <div class="container">
+        <div class="row">
+          <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="logo pb-2 pe-5">
+              <a href="home.html"
+                ><img
+                  src="img/static/logo-alt.png"
+                  alt=""
+                  class="img-fluid"
+              /></a>
+            </div>
+            <p class="py-3">
+              Bu uzun bir həqiqətdir ki, oxucu səhifəyə daxil olduqda məzmun
+              verir. Lorem Ipsum-dan istifadənin məqsədi onun olmasıdır
+            </p>
+            <div class="socials row">
+              <a href="facebook.com"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="twitter.com"><i class="fa-brands fa-twitter"></i></a>
+              <a href="pinterest.com"
+                ><i class="fa-brands fa-pinterest-p"></i
+              ></a>
+              <a href="linkedin.com"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="title">Müştəri Xidmətləri</h5>
+            <ul class="list-unstyled">
+              <li><a href="contact.html">Əlaqə</a></li>
+              <li><a href="about.html">Haqqımızda</a></li>
+              <li><a href="services.html">Xidmətlərimiz</a></li>
+              <li><a href="fag.html">Tez-tez verilən suallar</a></li>
+            </ul>
+          </div>
+          <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="title">Ən Son Paylaşımlar</h5>
+            <div class="post pb-3">
+              <div class="post-img p-0">
+                <a href="blog-detail.html"
+                  ><img
+                    src="img/static/automotive-car-coupe-dashboard-498694-80x80.jpg"
+                    alt=""
+                    class="img-fluid"
+                /></a>
+              </div>
+              <div class="post-text ps-3 row align-items-center text-start">
+                <div class="post-title">
+                  <a href="blog-detail.html"
+                    >Elektrikli maşınlar düşündüyünüz qədər sağlam deyil</a
+                  >
+                </div>
+                <div class="post-date py-1">Aprel 20, 2023</div>
+              </div>
+            </div>
+            <div class="post">
+              <div class="post-img p-0">
+                <a href="blog-detail.html"
+                  ><img
+                    src="img/static/parked-white-coupe-during-night-3354648-80x80.jpg"
+                    alt=""
+                    class="img-fluid"
+                /></a>
+              </div>
+              <div
+                class="post-text ps-3 row align-items-center align-content-start text-start"
+              >
+                <div class="post-title">
+                  <a href="blog-detail.html"
+                    >Avtomobillerin nece işə düşdüyünü bilirsənmi?</a
+                  >
+                </div>
+                <div class="post-date py-1">Aprel 19, 2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="column last pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+            <h5 class="title">Xəbərlər</h5>
+            <p>
+              Xəbərlərimizə abunə olun və növbəti ödəniş üçün bonus əldə edin
+            </p>
+            <input
+              type="text"
+              placeholder="Elektron poçtunuz"
+              class="rounded-5 w-100 mt-3"
+            />
+            <a href="" class="rounded-5 w-100 text-center mt-3">Abunə ol</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lower-footer">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="copyright text-white opacity-75">
+            <p class="m-0">
+              Copyright © 2023 Sayara. Bütün hüquqlar Wild Team tərəfindən
+              qorunur.
+            </p>
+          </div>
+          <ul
+            class="cards list-unstyled row p-0 m-0 align-items-center justify-content-center justify-content-md-end"
+          >
+            <li class="col-4 col-sm-3 col-md-2">
+              <a href="#"
+                ><img
+                  src="img/static/mastercard.png"
+                  alt="mastercard"
+                  class="img-fluid"
+              /></a>
+            </li>
+            <li class="col-4 col-sm-3 col-md-2">
+              <a href="#"
+                ><img
+                  src="img/static/visa.png"
+                  alt="visa"
+                  class="img-fluid"
+              /></a>
+            </li>
+            <li class="col-4 col-sm-3 col-md-2">
+              <a href="#"
+                ><img src="img/static/jcb.png" alt="jcb" class="img-fluid"
+              /></a>
+            </li>
+            <li class="col-4 col-sm-3 col-md-2">
+              <a href="#"
+                ><img
+                  src="img/static/discover.png"
+                  alt="discover"
+                  class="img-fluid"
+              /></a>
+            </li>
+            <li class="col-4 col-sm-3 col-md-2">
+              <a href="#"
+                ><img
+                  src="img/static/paypal.png"
+                  alt="paypal"
+                  class="img-fluid"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+
+<script>
+    AOS.init();
+</script>
+
+
+
+<script  src="/assets/jquery-3.6.4.min.js"></script>
+<script  src="assets/slick.min.js"></script>
+
+<script src="./js/home.js"></script>
 </body>
 </html>

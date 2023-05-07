@@ -1,16 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script async src="./assets/bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="./assets/bootstrap.css">
-    <link rel="stylesheet" href="./scss/style.css">
-    <script async src="./js/main.js"></script>
-</head>
-<body>
-    
-</body>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script async src="./assets/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap.css" />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <script async src="./js/blog.js"></script>
+  </head>
+  <body class="blog_body">
+    <div class="overlay-body"></div>
+    <div class="loading">
+        <img class="spedometer" src="img/static/preloader.gif" alt="">
+    </div>
+    <span class="up"><i class="fa-solid fa-arrow-up"></i></span>
+    <header id="header">
+      <div class="upper-navbar">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="logo col-5 col-sm-4 col-lg-3 py-3">
+              <a href="home.html"
+                ><img src="/img/static/logo.png"
+                  alt="logo"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="search-bar d-none d-lg-block col-lg-7">
+              <input class="" type="text" placeholder="Axtarış" />
+              <a class="search-link text-white text-decoration-none" href=""
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </div>
+            <div
+              class="cart d-flex align-items-center col-5 col-sm-6 col-lg-2 justify-content-end"
+            >
+              <div class="cart-logo d-flex align-items-center">
+                <i class="fa-solid fa-cart-plus"></i>
+              </div>
+              <div class="cart-text">
+                <p class="m-0">Satış Səbəti</p>
+                <h4 class="m-0">$0.00</h4>
+                <div class="cart-box">
+                  <!-- No products in the cart. -->
+                  <div class="product pb-3">
+                    <div class="product-img p-0">
+                      <a href="product-detail.html"
+                        ><img
+                          src="img/static/e-p-6-1.jpg"
+                          alt=""
+                          class="img-fluid"
+                      /></a>
+                    </div>
+                    <div
+                      class="product-text row align-items-center ps-2 text-start"
+                    >
+                      <div class="product-title">
+                        <a href="product-detail.html"
+                          >Powerstroke Engines Turbo Air Products</a
+                        >
+                      </div>
+                      <div class="product-price">
+                        <span class="count">1</span>
+                        <span>x</span>
+                        <span class="price">$563.00</span>
+                      </div>
+                    </div>
+                    <p class="product-remove">x</p>
+                  </div>
+                  <div class="subtotal d-flex justify-content-between">
+                    <p>Cəmi:</p>
+                    <p>$563.00</p>
+                  </div>
+                  <div class="cart-links d-flex justify-content-between">
+                    <a href="cart.html">Səbəti Göstər</a>
+                    <a href="order.html">Ödəniş</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="burger-bar col-2 justify-content-end d-flex d-lg-none">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side-menu">
+        <i class="fa-solid fa-xmark"></i>
+        <div class="logo p-3">
+          <a class="d-flex justify-content-center" href="home.html"
+            ><img
+              src="/img/static/logo.png"
+              alt="logo"
+              class="col-7 col-lg-12 img-fluid"
+          /></a>
+        </div>
+        <ul class="menu list-unstyled m-0 p-0">
+          <li><a class="menu-link" href="home.html">Ana Səhifə</a></li>
+          <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+          <li><a class="menu-link" href="shop.html">Məhsullar</a></li>
+          <li><a class="menu-link" href="services.html">Xidmətlərimiz</a></li>
+          <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+          <li><a class="menu-link active" href="blog.html">Bloq</a></li>
+          <li>
+            <a class="menu-link" href="fag.html">Tez-tez verilən suallar</a>
+          </li>
+        </ul>
+      </div>
+      <div class="lower-navbar d-none d-lg-block">
+        <div class="container">
+          <div class="d-flex">
+            <div class="category-menu align-items-center pe-5 d-none d-xl-flex">
+              <span class="text-white text-decoration-none"
+                ><i class="fa-solid fa-bars pe-md-3"></i>Kateqoriyalar</span
+              >
+              <div class="menu-box">
+                <ul class="list-unstyled m-0 p-0">
+                  <li><a href="shop.html">Qulluq Məhsulları</a></li>
+                  <li><a href="shop.html">Disk və Təkər Aksesuarları</a></li>
+                  <li><a href="shop.html">Daxili Aksesuarlar</a></li>
+                  <li><a href="shop.html">Xarici Aksesuarlar</a></li>
+                  <li><a href="shop.html">Səs və Görüntü Sistemləri</a></li>
+                  <li><a href="shop.html">Təhlükəsizlik Sistemləri</a></li>
+                </ul>
+              </div>
+            </div>
+            <ul class="menu d-flex list-unstyled m-0 p-0">
+              <li>
+                <a class="menu-link" href="home.html">Ana Səhifə</a>
+              </li>
+              <li><a class="menu-link" href="about.html">Haqqımızda</a></li>
+              <li><a class="menu-link" href="shop.html">Məhsullar</a></li>
+              <li>
+                <a class="menu-link" href="services.html">Xidmətlərimiz</a>
+              </li>
+              <li><a class="menu-link" href="contact.html">Əlaqə</a></li>
+              <li><a class="menu-link active" href="blog.html">Bloq</a></li>
+              <li>
+                <a class="menu-link" href="fag.html">Tez-tez verilən suallar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="breadcrumbs">
+        <div class="container text-center">
+          <h1>Bloq</h1>
+          <div class="path d-md-block d-none">
+            <a href="home.html">Ana Səhifə</a>
+            <span>»</span>
+            <span>Bloq</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="blog-content">
+      <div class="container">
+        <div class="row mt-100px">
+          <div class="cl-9 col-lg-9 col-md-7 bg-white mb-3">
+            <div class="post mb-5">
+              <div class="img-box">
+                <a href="./blog-detail.html">
+                  <img
+                    src="./img/blog/man-in-black-jacket-and-black-knit-cap-standing-near-vehicle-3807329-1280x650.jpg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <span class="excerpt-date"> May 20, 2020 </span>
+              </div>
+              <div class="blog-content container">
+                <div class="icons py-3">
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-user px-3"></i> By Admin
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-comment px-3"></i> 2 Comments
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-tags px-3"></i> 2 Body Parts
+                  </a>
+                </div>
+                <div class="text">
+                  <h3>
+                    Electric cars aren’t pollution-free; they have to get their
+                    energy from somewhere
+                  </h3>
+                  <p class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis...
+                  </p>
+                  <a href="./blog-detail.html" class="read_more_btn">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="post">
+              <div class="img-box">
+                <a href="./blog-detail.html">
+                  <img
+                    src="./img/blog/automotive-car-coupe-dashboard-498694-1280x650.jpg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <span class="excerpt-date"> May 20, 2020 </span>
+              </div>
+              <div class="blog-content container">
+                <div class="icons py-3">
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-user px-3"></i> By Admin
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-comment px-3"></i> 2 Comments
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-tags px-3"></i> 2 Body Parts
+                  </a>
+                </div>
+                <div class="text">
+                  <h3>
+                    Electric cars aren’t pollution-free; they have to get their
+                    energy from somewhere
+                  </h3>
+                  <p class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis...
+                  </p>
+                  <a href="./blog-detail.html" class="read_more_btn">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="post my-5">
+              <div class="img-box">
+                <a href="./blog-detail.html">
+                  <img
+                    src="./img/blog/parked-white-coupe-during-night-3354648-1280x650.jpg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <span class="excerpt-date"> May 20, 2020 </span>
+              </div>
+              <div class="blog-content container">
+                <div class="icons py-3">
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-user px-3"></i> By Admin
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-comment px-3"></i> 2 Comments
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-tags px-3"></i> 2 Body Parts
+                  </a>
+                </div>
+                <div class="text">
+                  <h3>
+                    Electric cars aren’t pollution-free; they have to get their
+                    energy from somewhere
+                  </h3>
+                  <p class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis...
+                  </p>
+                  <a href="./blog-detail.html" class="read_more_btn">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="post my-5">
+              <div class="img-box">
+                <a href="./blog-detail.html">
+                  <img
+                    src="./img/blog/car-driving-fast-sports-car-18296-1280x650.jpg"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </a>
+                <span class="excerpt-date"> May 20, 2020 </span>
+              </div>
+              <div class="blog-content container">
+                <div class="icons py-3">
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-user px-3"></i> By Admin
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-comment px-3"></i> 2 Comments
+                  </a>
+
+                  <a href="" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-tags px-3"></i> 2 Body Parts
+                  </a>
+                </div>
+                <div class="text">
+                  <h3>
+                    Electric cars aren’t pollution-free; they have to get their
+                    energy from somewhere
+                  </h3>
+                  <p class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis...
+                  </p>
+                  <a href="./blog-detail.html" class="read_more_btn">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav_links">
+              <a href="#" class="prev">Prev</a>
+              <a href="#" class="b1">1</a>
+              <a href="#" class="b2">2</a>
+              <a href="#" class="next">Next</a>
+            </div>
+          </div>
+          <div class="cl-3 col-lg-3 col-md-5 bg-white">
+            <div class="post-recent container">
+              <div class="post-title">
+                <h4>Recent Posts</h4>
+                <hr />
+              </div>
+              <div class="post1">
+                <div class="post1-content d-flex justify-content-center">
+                  <div class="pos-img me-3">
+                    <a href="./blog-detail.html">
+                      <img
+                        src="./img/blog/automotive-car-coupe-dashboard-498694-100x100.jpg"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                  </div>
+                  <div class="post1-text">
+                    <a href="" class="text-decoration-none text-dark">
+                      Electric cars aren’t pollution-free; the</a
+                    >
+                    <p>May 20, 2020</p>
+                  </div>
+                </div>
+                <div class="post1-content d-flex justify-content-center">
+                  <div class="pos-img me-3">
+                    <a href="./blog-detail.html">
+                      <img
+                        src="./img/blog/parked-white-coupe-during-night-3354648-100x100.jpg"
+                        alt=""
+                        class="img-fluid"
+                    /></a>
+                  </div>
+                  <div class="post1-text">
+                    <a href="" class="text-decoration-none text-dark">
+                      Electric cars aren’t pollution-free; the</a
+                    >
+                    <p>May 20, 2020</p>
+                  </div>
+                </div>
+                <div class="post1-content d-flex justify-content-center">
+                  <div class="pos-img me-3">
+                    <a href="./blog-detail.html">
+                      <img
+                        src="./img/blog/car-driving-fast-sports-car-18296-100x100.jpg"
+                        class="img-fluid"
+                    /></a>
+                  </div>
+                  <div class="post1-text">
+                    <a href="" class="text-decoration-none text-dark">
+                      Electric cars aren't pollution-free; the</a
+                    >
+                    <p>May 20, 2020</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media_image">
+              <a href="./blog-detail.html">
+                <img
+                  src="./img/blog/add-banner-red.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </a>
+            </div>
+            <div class="catigories">
+              <div class="container">
+                <div class="title">
+                  <h5>Categories</h5>
+                  <hr />
+                </div>
+                <div class="content-blog">
+                  <ul>
+                    <li>
+                      <a href="./blog-detail.html" class="text-decoration-none text-dark"
+                        >Body Parts (3)</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./blog-detail.html" class="text-decoration-none text-dark"
+                        >Engine & Drivetrain (3)</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./blog-detail.html" class="text-decoration-none text-dark"
+                        >Interior Parts (4)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="tags">
+                  <div class="container">
+                    <div class="title">
+                      <h5>Tags</h5>
+                      <hr />
+                    </div>
+                    
+                    <div class="content-blog">
+                      <a href="./blog-detail.html">Air Filters</a>
+                      <a href="./blog-detail.html">Brake Discs</a>
+                      <a href="./blog-detail.html">Bumpers</a>
+                      <a href="./blog-detail.html">Car Care</a>
+                      <a href="./blog-detail.html">Car Covers</a>
+                      <a href="./blog-detail.html">Cargo Accessories</a>
+                      <a href="./blog-detail.html">Consoles & Organizers</a>
+                      <a href="./blog-detail.html"> Corner Ligths</a>
+                      <a href="./blog-detail.html">Floor Mats</a>
+                      <a href="./blog-detail.html">Fog Ligths</a>
+                      <a href="./blog-detail.html"> Hoods</a>
+                      <a href="./blog-detail.html">Wheel Hubs</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="upper-footer">
+        <div class="container">
+          <div class="row">
+            <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="logo pb-2 pe-5">
+                <a href="home.html"
+                  ><img
+                    src="img/static/logo-alt.png"
+                    alt=""
+                    class="img-fluid"
+                /></a>
+              </div>
+              <p class="py-3">
+                Bu uzun bir həqiqətdir ki, oxucu səhifəyə daxil olduqda məzmun
+                verir. Lorem Ipsum-dan istifadənin məqsədi onun olmasıdır
+              </p>
+              <div class="socials row">
+                <a href="facebook.com"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a href="twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="pinterest.com"
+                  ><i class="fa-brands fa-pinterest-p"></i
+                ></a>
+                <a href="linkedin.com"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+              <h5 class="title">Müştəri Xidmətləri</h5>
+              <ul class="list-unstyled">
+                <li><a href="contact.html">Əlaqə</a></li>
+                <li><a href="about.html">Haqqımızda</a></li>
+                <li><a href="services.html">Xidmətlərimiz</a></li>
+                <li><a href="fag.html">Tez-tez verilən suallar</a></li>
+              </ul>
+            </div>
+            <div class="column pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+              <h5 class="title">Ən Son Paylaşımlar</h5>
+              <div class="post pb-3">
+                <div class="post-img p-0">
+                  <a href="blog-detail.html"
+                    ><img
+                      src="img/static/automotive-car-coupe-dashboard-498694-80x80.jpg"
+                      alt=""
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="post-text ps-3 row align-items-center text-start">
+                  <div class="post-title">
+                    <a href="blog-detail.html"
+                      >Elektrikli maşınlar düşündüyünüz qədər sağlam deyil</a
+                    >
+                  </div>
+                  <div class="post-date py-1">Aprel 20, 2023</div>
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-img p-0">
+                  <a href="blog-detail.html"
+                    ><img
+                      src="img/static/parked-white-coupe-during-night-3354648-80x80.jpg"
+                      alt=""
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div
+                  class="post-text ps-3 row align-items-center align-content-start text-start"
+                >
+                  <div class="post-title">
+                    <a href="blog-detail.html"
+                      >Avtomobillerin nece işə düşdüyünü bilirsənmi?</a
+                    >
+                  </div>
+                  <div class="post-date py-1">Aprel 19, 2023</div>
+                </div>
+              </div>
+            </div>
+            <div class="column last pt-3 col-12 col-md-6 col-lg-4 col-xl-3">
+              <h5 class="title">Xəbərlər</h5>
+              <p>
+                Xəbərlərimizə abunə olun və növbəti ödəniş üçün bonus əldə edin
+              </p>
+              <input
+                type="text"
+                placeholder="Elektron poçtunuz"
+                class="rounded-5 w-100 mt-3"
+              />
+              <a href="" class="rounded-5 w-100 text-center mt-3">Abunə ol</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lower-footer">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="copyright text-white opacity-75">
+              <p class="m-0">
+                Copyright © 2023 Sayara. Bütün hüquqlar Wild Team tərəfindən
+                qorunur.
+              </p>
+            </div>
+            <ul
+              class="cards list-unstyled row p-0 m-0 align-items-center justify-content-center justify-content-md-end"
+            >
+              <li class="col-4 col-sm-3 col-md-2">
+                <a href="./blog-detail.html"
+                  ><img
+                    src="img/static/mastercard.png"
+                    alt="mastercard"
+                    class="img-fluid"
+                /></a>
+              </li>
+              <li class="col-4 col-sm-3 col-md-2">
+                <a href="./blog-detail.html"
+                  ><img
+                    src="img/static/visa.png"
+                    alt="visa"
+                    class="img-fluid"
+                /></a>
+              </li>
+              <li class="col-4 col-sm-3 col-md-2">
+                <a href="./blog-detail.html"
+                  ><img src="img/static/jcb.png" alt="jcb" class="img-fluid"
+                /></a>
+              </li>
+              <li class="col-4 col-sm-3 col-md-2">
+                <a href="./blog-detail.html"
+                  ><img
+                    src="img/static/discover.png"
+                    alt="discover"
+                    class="img-fluid"
+                /></a>
+              </li>
+              <li class="col-4 col-sm-3 col-md-2">
+                <a href="./blog-detail.html"
+                  ><img
+                    src="img/static/paypal.png"
+                    alt="paypal"
+                    class="img-fluid"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
